@@ -10,7 +10,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -18,13 +18,13 @@
             background: linear-gradient(135deg, #ff6b6b, #ff8e53);
             min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
         .header {
             background: rgba(255, 255, 255, 0.95);
@@ -36,43 +36,52 @@
             z-index: 1000;
             padding: 1rem 0;
         }
-        
-        .nav {
+
+        .nav-primary {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
+        /* New for mobile cart */
+        .nav-secondary {
+            display: none; /* Hidden by default */
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            margin-top: 1rem;
+        }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .logo img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             border: 3px solid #ff6b6b;
         }
-        
+
         .logo-text h1 {
             color: #ff6b6b;
             font-size: 1.5rem;
             margin-bottom: 2px;
         }
-        
+
         .logo-text p {
             color: #666;
             font-size: 0.9rem;
         }
-        
+
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
-        
+
         .nav-menu a {
             text-decoration: none;
             color: #333;
@@ -81,13 +90,58 @@
             padding: 8px 16px;
             border-radius: 25px;
         }
-        
+
         .nav-menu a:hover {
             background: linear-gradient(135deg, #ff6b6b, #ff8e53);
             color: white;
             transform: translateY(-2px);
         }
+
+        /* Cart Button */
+        .cart-button {
+            position: relative;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cart-count {
+            background: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
         
+        /* Mobile-specific cart button style */
+        .mobile-cart-button {
+            width: 100%;
+            justify-content: center;
+            padding: 15px 0;
+            font-size: 1.1rem;
+        }
+
         /* Hero Section */
         .hero {
             margin-top: 100px;
@@ -95,21 +149,21 @@
             text-align: center;
             color: white;
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease-out;
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
             animation: fadeInUp 1s ease-out 0.2s both;
         }
-        
+
         .cta-button {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
@@ -124,34 +178,34 @@
             transition: all 0.3s ease;
             animation: fadeInUp 1s ease-out 0.4s both;
         }
-        
+
         .cta-button:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
-        
+
         /* Features Section */
         .features {
             padding: 5rem 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
         }
-        
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: #333;
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .feature-card {
             background: white;
             padding: 2rem;
@@ -161,13 +215,13 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             border-color: #ff6b6b;
         }
-        
+
         .feature-icon {
             width: 80px;
             height: 80px;
@@ -179,25 +233,25 @@
             margin: 0 auto 1.5rem;
             font-size: 2rem;
         }
-        
+
         .feature-card h3 {
             color: #333;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
-        
+
         .feature-card p {
             color: #666;
             line-height: 1.6;
         }
-        
+
         /* Products Section - Enhanced */
         .products {
             padding: 5rem 0;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
         }
-        
+
         .product-categories {
             display: flex;
             flex-wrap: wrap;
@@ -205,7 +259,7 @@
             gap: 1rem;
             margin: 2rem 0;
         }
-        
+
         .category-btn {
             background: rgba(255, 255, 255, 0.2);
             color: white;
@@ -216,20 +270,20 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-        
+
         .category-btn.active,
         .category-btn:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
-        
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .product-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -241,15 +295,15 @@
             color: #333;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
-        
+
         .product-image {
             width: 100%;
-            height: 200px;
+            height: 120px;
             background: #f8f9fa;
             border-radius: 15px;
             display: flex;
@@ -260,14 +314,14 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 15px;
         }
-        
+
         .product-sku {
             background: linear-gradient(135deg, #ff6b6b, #ff8e53);
             color: white;
@@ -278,18 +332,18 @@
             display: inline-block;
             margin-bottom: 0.5rem;
         }
-        
+
         .product-card h3 {
             color: #333;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
-        
+
         .product-variants {
             margin: 1rem 0;
             text-align: left;
         }
-        
+
         .variant-item {
             display: flex;
             justify-content: space-between;
@@ -297,21 +351,21 @@
             padding: 8px 0;
             border-bottom: 1px solid #eee;
         }
-        
+
         .variant-item:last-child {
             border-bottom: none;
         }
-        
+
         .variant-name {
             font-weight: 500;
             color: #555;
         }
-        
+
         .variant-price {
             font-weight: bold;
             color: #ff6b6b;
         }
-        
+
         .order-btn {
             background: #25d366;
             color: white;
@@ -326,39 +380,12 @@
             cursor: pointer;
             width: 100%;
         }
-        
+
         .order-btn:hover {
             background: #128c7e;
             transform: translateY(-2px);
         }
-        
-        /* Customer Contact Section */
-        .customer-contact {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            backdrop-filter: blur(5px);
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .contact-item {
-            padding: 2rem;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-            color: white;
-        }
-        
-        .contact-item h3 {
-            margin-bottom: 1rem;
-        }
-        
+
         /* Modal for product details */
         .modal {
             display: none;
@@ -371,7 +398,7 @@
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
         }
-        
+
         .modal-content {
             background: white;
             margin: 5% auto;
@@ -383,7 +410,7 @@
             overflow-y: auto;
             position: relative;
         }
-        
+
         .close {
             position: absolute;
             top: 15px;
@@ -394,11 +421,11 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
+
         .close:hover {
             color: #333;
         }
-        
+
         .quantity-selector {
             display: flex;
             align-items: center;
@@ -406,7 +433,7 @@
             margin: 1rem 0;
             justify-content: center;
         }
-        
+
         .quantity-btn {
             background: #ff6b6b;
             color: white;
@@ -418,7 +445,7 @@
             font-size: 18px;
             font-weight: bold;
         }
-        
+
         .quantity-input {
             width: 60px;
             text-align: center;
@@ -427,14 +454,199 @@
             border-radius: 10px;
             font-weight: bold;
         }
-        
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .cart-modal-content {
+            background: white;
+            margin: 2% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            background: #f8f9fa;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-details {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .cart-quantity-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cart-quantity-input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .cart-item-price {
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-left: 15px;
+        }
+
+        .cart-item-remove {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .cart-total {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .cart-total h3 {
+            margin-bottom: 10px;
+        }
+
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cart-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cart-btn-primary {
+            background: #25d366;
+            color: white;
+        }
+
+        .cart-btn-primary:hover {
+            background: #128c7e;
+        }
+
+        .cart-btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .cart-btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .cart-btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .cart-btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .empty-cart i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
         /* Contact Section */
         .contact {
             padding: 5rem 0;
             background: white;
             text-align: center;
         }
-        
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+        }
+
         /* Footer */
         .footer {
             background: #333;
@@ -442,7 +654,7 @@
             text-align: center;
             padding: 2rem 0;
         }
-        
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -454,61 +666,93 @@
                 transform: translateY(0);
             }
         }
-        
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             
+            /* Show secondary nav on mobile */
+            .nav-secondary {
+                display: block;
+            }
+
+            .nav-primary {
+                padding-bottom: 1rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .products-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .modal-content {
+
+            .modal-content,
+            .cart-modal-content {
                 width: 95%;
                 margin: 10% auto;
             }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .cart-actions {
+                flex-direction: column;
+            }
         }
-        
+
         .hidden {
             display: none;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <nav class="nav container">
-            <div class="logo">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff6b6b'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='40' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E" alt="Logo">
-                <div class="logo-text">
-                    <h1>KOPERASI DESA MERAH PUTIH</h1>
-                    <p>Kalurahan Kedungsari</p>
+        <div class="container">
+            <nav class="nav-primary">
+                <div class="logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff6b6b'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='40' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E" alt="Logo">
+                    <div class="logo-text">
+                        <h1>KOPERASI DESA MERAH PUTIH</h1>
+                        <p>Kalurahan Kedungsari</p>
+                    </div>
                 </div>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#produk">Produk</a></li>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-        </nav>
+                <ul class="nav-menu">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#produk">Produk</a></li>
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                    <li class="cart-desktop">
+                        <button class="cart-button" onclick="openCart()">
+                            🛒 Keranjang
+                            <div class="cart-count" id="cartCountDesktop">0</div>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav-secondary">
+                <button class="cart-button mobile-cart-button" onclick="openCart()">
+                    🛒 Keranjang
+                    <div class="cart-count" id="cartCountMobile">0</div>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="beranda">
         <div class="container">
             <h1>Selamat Datang di Koperasi Desa Merah Putih</h1>
@@ -517,7 +761,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features" id="tentang">
         <div class="container">
             <h2 class="section-title">Mengapa Memilih Kami?</h2>
@@ -541,25 +784,26 @@
         </div>
     </section>
 
-    <!-- Products Section - Enhanced -->
     <section class="products" id="produk">
         <div class="container">
             <h2 class="section-title">Produk Unggulan Kami</h2>
-            
+
             <div class="product-categories">
                 <button class="category-btn active" onclick="filterProducts('all')">Semua</button>
                 <button class="category-btn" onclick="filterProducts('beras')">Beras</button>
                 <button class="category-btn" onclick="filterProducts('sayuran')">Sayuran</button>
                 <button class="category-btn" onclick="filterProducts('ikan')">Ikan</button>
+                <button class="category-btn" onclick="filterProducts('daging')">Daging</button>
+                <button class="category-btn" onclick="filterProducts('telur')">Telur</button>
                 <button class="category-btn" onclick="filterProducts('olahan')">Produk Olahan</button>
                 <button class="category-btn" onclick="filterProducts('minuman')">Minuman</button>
+                <button class="category-btn" onclick="filterProducts('lainlain')">Produk Lain-Lain</button>
             </div>
-            
+
             <div class="products-grid" id="productsGrid">
-                <!-- Beras Products -->
                 <div class="product-card" data-category="beras">
                     <div class="product-image">🌾</div>
-                    <div class="product-sku">SKU-BR001</div>
+                    <div class="product-sku">KBR-001</div>
                     <h3>Beras Premium</h3>
                     <div class="product-variants">
                         <div class="variant-item">
@@ -579,13 +823,12 @@
                             <span class="variant-price">Rp 13.000/kg</span>
                         </div>
                     </div>
-                    <button class="order-btn" onclick="openOrderModal('Beras Premium', 'SKU-BR001', berasVariants)">Pesan Sekarang</button>
+                    <button class="order-btn" onclick="openOrderModal('Beras Premium', 'KBR-001', berasVariants)">Tambah ke Keranjang</button>
                 </div>
 
-                <!-- Sayuran Products -->
                 <div class="product-card" data-category="sayuran">
                     <div class="product-image">🥬</div>
-                    <div class="product-sku">SKU-SY001</div>
+                    <div class="product-sku">KSY-001</div>
                     <h3>Sayuran Segar Organik</h3>
                     <div class="product-variants">
                         <div class="variant-item">
@@ -605,17 +848,16 @@
                             <span class="variant-price">Rp 8.000/250gr</span>
                         </div>
                     </div>
-                    <button class="order-btn" onclick="openOrderModal('Sayuran Segar Organik', 'SKU-SY001', sayuranVariants)">Pesan Sekarang</button>
+                    <button class="order-btn" onclick="openOrderModal('Sayuran Segar Organik', 'KSY-001', sayuranVariants)">Tambah ke Keranjang</button>
                 </div>
 
-                <!-- Ikan Products -->
                 <div class="product-card" data-category="ikan">
                     <div class="product-image">🐟</div>
-                    <div class="product-sku">SKU-IK001</div>
+                    <div class="product-sku">KIK-001</div>
                     <h3>Ikan Segar Lokal</h3>
                     <div class="product-variants">
                         <div class="variant-item">
-                            <span class="variant-name">Ikan Lele Segar</span>
+                            <span class="variant-name">10101-Ikan Lele Segar</span>
                             <span class="variant-price">Rp 18.000/kg</span>
                         </div>
                         <div class="variant-item">
@@ -631,349 +873,428 @@
                             <span class="variant-price">Rp 22.000/kg</span>
                         </div>
                     </div>
-                    <button class="order-btn" onclick="openOrderModal('Ikan Segar Lokal', 'SKU-IK001', ikanVariants)">Pesan Sekarang</button>
+                    <button class="order-btn" onclick="openOrderModal('Ikan Segar Lokal', 'KIK-001', ikanVariants)">Tambah ke Keranjang</button>
                 </div>
 
-                <!-- Produk Olahan -->
-                <div class="product-card" data-category="olahan">
-                    <div class="product-image">🍯</div>
-                    <div class="product-sku">SKU-MD001</div>
-                    <h3>Madu & Produk Olahan</h3>
+                <div class="product-card" data-category="daging">
+                    <div class="product-image">🥩</div>
+                    <div class="product-sku">KDG-001</div>
+                    <h3>Daging Segar Lokal</h3>
                     <div class="product-variants">
                         <div class="variant-item">
-                            <span class="variant-name">Madu Asli Murni</span>
-                            <span class="variant-price">Rp 45.000/botol</span>
+                            <span class="variant-name">Daging Sapi Segar</span>
+                            <span class="variant-price">Rp 120.000/kg</span>
                         </div>
                         <div class="variant-item">
-                            <span class="variant-name">Keripik Singkong</span>
-                            <span class="variant-price">Rp 8.000/bungkus</span>
+                            <span class="variant-name">Daging Kambing</span>
+                            <span class="variant-price">Rp 110.000/kg</span>
                         </div>
                         <div class="variant-item">
-                            <span class="variant-name">Dodol Durian</span>
-                            <span class="variant-price">Rp 15.000/kotak</span>
+                            <span class="variant-name">Daging Ayam Kampung</span>
+                            <span class="variant-price">Rp 85.000/kg</span>
                         </div>
                         <div class="variant-item">
-                            <span class="variant-name">Abon Ikan</span>
-                            <span class="variant-price">Rp 25.000/250gr</span>
+                            <span class="variant-name">Daging Bebek</span>
+                            <span class="variant-price">Rp 75.000/kg</span>
                         </div>
                     </div>
-                    <button class="order-btn" onclick="openOrderModal('Madu & Produk Olahan', 'SKU-MD001', olahanVariants)">Pesan Sekarang</button>
+                    <button class="order-btn" onclick="openOrderModal('Daging Segar Lokal', 'KDG-001', dagingVariants)">Tambah ke Keranjang</button>
                 </div>
 
-                <!-- Minuman -->
-                <div class="product-card" data-category="minuman">
-                    <div class="product-image">☕</div>
-                    <div class="product-sku">SKU-KP001</div>
-                    <h3>Kopi & Minuman Lokal</h3>
+                <div class="product-card" data-category="telur">
+                    <div class="product-image">🥚</div>
+                    <div class="product-sku">KTL-001</div>
+                    <h3>Telur Segar Lokal</h3>
                     <div class="product-variants">
                         <div class="variant-item">
-                            <span class="variant-name">Kopi Robusta Lokal</span>
-                            <span class="variant-price">Rp 35.000/250gr</span>
+                            <span class="variant-name">Telur Ayam Kampung</span>
+                            <span class="variant-price">Rp 2.500/butir</span>
                         </div>
                         <div class="variant-item">
-                            <span class="variant-name">Kopi Arabika Premium</span>
-                            <span class="variant-price">Rp 45.000/250gr</span>
+                            <span class="variant-name">Telur Ayam Ras</span>
+                            <span class="variant-price">Rp 1.800/butir</span>
                         </div>
                         <div class="variant-item">
-                            <span class="variant-name">Teh Herbal Jahe</span>
-                            <span class="variant-price">Rp 12.000/kotak</span>
+                            <span class="variant-name">Telur Bebek</span>
+                            <span class="variant-price">Rp 3.000/butir</span>
                         </div>
                         <div class="variant-item">
-                            <span class="variant-name">Wedang Uwuh</span>
-                            <span class="variant-price">Rp 10.000/kotak</span>
+                            <span class="variant-name">Telur Puyuh</span>
+                            <span class="variant-price">Rp 500/butir</span>
                         </div>
                     </div>
-                    <button class="order-btn" onclick="openOrderModal('Kopi & Minuman Lokal', 'SKU-KP001', minumanVariants)">Pesan Sekarang</button>
+                    <button class="order-btn" onclick="openOrderModal('Telur Segar Lokal', 'KTL-001', telurVariants)">Tambah ke Keranjang</button>
                 </div>
 
-                <!-- Bumbu Dapur -->
                 <div class="product-card" data-category="olahan">
-                    <div class="product-image">🌶️</div>
-                    <div class="product-sku">SKU-BD001</div>
-                    <h3>Bumbu Dapur Tradisional</h3>
+                    <div class="product-image">🍜</div>
+                    <div class="product-sku">KOL-001</div>
+                    <h3>Produk Olahan Tradisional</h3>
                     <div class="product-variants">
+                        <div class="variant-item">
+                            <span class="variant-name">Tempe Kedelai Organik</span>
+                            <span class="variant-price">Rp 8.000/papan</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Tahu Putih</span>
+                            <span class="variant-price">Rp 5.000/papan</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Kerupuk Ikan</span>
+                            <span class="variant-price">Rp 15.000/pack</span>
+                        </div>
                         <div class="variant-item">
                             <span class="variant-name">Sambal Pecel</span>
-                            <span class="variant-price">Rp 5.000/bungkus</span>
-                        </div>
-                        <div class="variant-item">
-                            <span class="variant-name">Bumbu Gudeg</span>
-                            <span class="variant-price">Rp 8.000/bungkus</span>
-                        </div>
-                        <div class="variant-item">
-                            <span class="variant-name">Lombok Ijo Giling</span>
-                            <span class="variant-price">Rp 3.000/100gr</span>
-                        </div>
-                        <div class="variant-item">
-                            <span class="variant-name">Garam Laut Lokal</span>
-                            <span class="variant-price">Rp 2.500/250gr</span>
+                            <span class="variant-price">Rp 12.000/jar</span>
                         </div>
                     </div>
-                    <button class="order-btn" onclick="openOrderModal('Bumbu Dapur Tradisional', 'SKU-BD001', bumbuVariants)">Pesan Sekarang</button>
+                    <button class="order-btn" onclick="openOrderModal('Produk Olahan Tradisional', 'KOL-001', olahanVariants)">Tambah ke Keranjang</button>
+                </div>
+
+                <div class="product-card" data-category="minuman">
+                    <div class="product-image">🥤</div>
+                    <div class="product-sku">KMN-001</div>
+                    <h3>Minuman Tradisional</h3>
+                    <div class="product-variants">
+                        <div class="variant-item">
+                            <span class="variant-name">Jamu Kunyit Asam</span>
+                            <span class="variant-price">Rp 8.000/botol</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Es Kelapa Muda</span>
+                            <span class="variant-price">Rp 12.000/buah</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Wedang Jahe</span>
+                            <span class="variant-price">Rp 5.000/gelas</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Teh Daun Mint</span>
+                            <span class="variant-price">Rp 6.000/gelas</span>
+                        </div>
+                    </div>
+                    <button class="order-btn" onclick="openOrderModal('Minuman Tradisional', 'KMN-001', minumanVariants)">Tambah ke Keranjang</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Order Modal -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeOrderModal()">&times;</span>
-            <h2 id="modalTitle">Pesan Produk</h2>
-            <div id="modalSKU" class="product-sku" style="margin: 1rem 0;"></div>
-            <div id="modalVariants"></div>
-            <div class="quantity-selector">
-                <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
-                <input type="number" id="quantity" class="quantity-input" value="1" min="1">
-                <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
-            </div>
-            <div class="customer-contact">
-                <h4>Informasi Customer Service:</h4>
-                <p><strong>📱 WhatsApp:</strong> +62 812-9683-690</p>
-                <p><strong>⏰ Jam Layanan:</strong> 08.00 - 17.00 WIB</p>
-            </div>
-            <button id="confirmOrder" class="order-btn">Konfirmasi Pesanan</button>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
     <section class="contact" id="kontak">
         <div class="container">
-            <h2 class="section-title" style="color: #333;">Hubungi Kami</h2>
+            <h2 class="section-title">Kontak Kami</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <h3>📱 WhatsApp</h3>
-                    <p>+62 812-9683-690</p>
+                    <h3>Alamat</h3>
+                    <p>Jl. Raya Jogja - Wates KM 23</p>
+                    <p>Kalurahan Kedungsari, Kab. Kulon Progo</p>
                 </div>
                 <div class="contact-item">
-                    <h3>📍 Alamat</h3>
-                    <p>Kalurahan Kedungsari<br>Kec. Pengasih, Kab. Kulon Progo</p>
+                    <h3>Telepon</h3>
+                    <p>+62 812-9683 690</p>
+                    <p>+62 856-7890-1234</p>
                 </div>
                 <div class="contact-item">
-                    <h3>⏰ Jam Buka</h3>
-                    <p>Senin - Sabtu: 08.00 - 17.00<br>Minggu: 08.00 - 12.00</p>
+                    <h3>Email</h3>
+                    <p>info@koperasimerahputih.com</p>
+                    <p>cs@koperasimerahputih.com</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Koperasi Desa Merah Putih - Kalurahan Kedungsari. Semua hak cipta dilindungi.</p>
-            <p>Melayani dengan sepenuh hati untuk kemajuan desa</p>
+            <p>&copy; 2025 Koperasi Desa Merah Putih. Hak Cipta Dilindungi Undang-Undang.</p>
         </div>
     </footer>
 
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h3 id="modalProductName"></h3>
+            <p id="modalProductSKU"></p>
+            <div id="modalProductVariants"></div>
+            <div class="quantity-selector">
+                <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                <input type="number" id="quantityInput" value="1" min="1" class="quantity-input">
+                <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+            </div>
+            <button class="order-btn" id="addToCartBtn">Tambahkan ke Keranjang</button>
+        </div>
+    </div>
+
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Keranjang Belanja 🛒</h2>
+            <div id="cartItemsContainer"></div>
+            <div id="emptyCartMessage" class="empty-cart hidden">
+                <p>Keranjang Anda kosong. Yuk, belanja sekarang!</p>
+            </div>
+            <div class="cart-total">
+                <h3>Total Belanja:</h3>
+                <span id="cartTotalAmount" class="total-amount">Rp 0</span>
+            </div>
+            <div class="cart-actions">
+                <button class="cart-btn cart-btn-primary" onclick="checkout()">Checkout via WhatsApp</button>
+                <button class="cart-btn cart-btn-secondary" onclick="closeCart()">Lanjutkan Belanja</button>
+                <button class="cart-btn cart-btn-danger" onclick="clearCart()">Kosongkan Keranjang</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Product variants data
+        // Data Produk
         const berasVariants = [
-            {name: "Beras Putih Premium", price: "Rp 12.000/kg"},
-            {name: "Beras Merah Organik", price: "Rp 15.000/kg"},
-            {name: "Beras Hitam Premium", price: "Rp 18.000/kg"},
-            {name: "Beras Ketan Putih", price: "Rp 13.000/kg"}
+            { id: 'beras-1', name: 'Beras Putih Premium', price: 12000 },
+            { id: 'beras-2', name: 'Beras Merah Organik', price: 15000 },
+            { id: 'beras-3', name: 'Beras Hitam Premium', price: 18000 },
+            { id: 'beras-4', name: 'Beras Ketan Putih', price: 13000 }
         ];
-
         const sayuranVariants = [
-            {name: "Kangkung Organik", price: "Rp 3.000/ikat"},
-            {name: "Bayam Merah", price: "Rp 3.500/ikat"},
-            {name: "Sawi Hijau", price: "Rp 4.000/ikat"},
-            {name: "Tomat Cherry", price: "Rp 8.000/250gr"}
+            { id: 'sayuran-1', name: 'Kangkung Organik', price: 3000 },
+            { id: 'sayuran-2', name: 'Bayam Merah', price: 3500 },
+            { id: 'sayuran-3', name: 'Sawi Hijau', price: 4000 },
+            { id: 'sayuran-4', name: 'Tomat Cherry', price: 8000 }
         ];
-
         const ikanVariants = [
-            {name: "Ikan Lele Segar", price: "Rp 18.000/kg"},
-            {name: "Ikan Nila Segar", price: "Rp 25.000/kg"},
-            {name: "Ikan Gurame", price: "Rp 35.000/kg"},
-            {name: "Ikan Bandeng", price: "Rp 22.000/kg"}
+            { id: 'ikan-1', name: '10101-Ikan Lele Segar', price: 18000 },
+            { id: 'ikan-2', name: 'Ikan Nila Segar', price: 25000 },
+            { id: 'ikan-3', name: 'Ikan Gurame', price: 35000 },
+            { id: 'ikan-4', name: 'Ikan Bandeng', price: 22000 }
         ];
-
+        const dagingVariants = [
+            { id: 'daging-1', name: 'Daging Sapi Segar', price: 120000 },
+            { id: 'daging-2', name: 'Daging Kambing', price: 110000 },
+            { id: 'daging-3', name: 'Daging Ayam Kampung', price: 85000 },
+            { id: 'daging-4', name: 'Daging Bebek', price: 75000 }
+        ];
+        const telurVariants = [
+            { id: 'telur-1', name: 'Telur Ayam Kampung', price: 2500 },
+            { id: 'telur-2', name: 'Telur Ayam Ras', price: 1800 },
+            { id: 'telur-3', name: 'Telur Bebek', price: 3000 },
+            { id: 'telur-4', name: 'Telur Puyuh', price: 500 }
+        ];
         const olahanVariants = [
-            {name: "Madu Asli Murni", price: "Rp 45.000/botol"},
-            {name: "Keripik Singkong", price: "Rp 8.000/bungkus"},
-            {name: "Dodol Durian", price: "Rp 15.000/kotak"},
-            {name: "Abon Ikan", price: "Rp 25.000/250gr"}
+            { id: 'olahan-1', name: 'Tempe Kedelai Organik', price: 8000 },
+            { id: 'olahan-2', name: 'Tahu Putih', price: 5000 },
+            { id: 'olahan-3', name: 'Kerupuk Ikan', price: 15000 },
+            { id: 'olahan-4', name: 'Sambal Pecel', price: 12000 }
         ];
-
         const minumanVariants = [
-            {name: "Kopi Robusta Lokal", price: "Rp 35.000/250gr"},
-            {name: "Kopi Arabika Premium", price: "Rp 45.000/250gr"},
-            {name: "Teh Herbal Jahe", price: "Rp 12.000/kotak"},
-            {name: "Wedang Uwuh", price: "Rp 10.000/kotak"}
+            { id: 'minuman-1', name: 'Jamu Kunyit Asam', price: 8000 },
+            { id: 'minuman-2', name: 'Es Kelapa Muda', price: 12000 },
+            { id: 'minuman-3', name: 'Wedang Jahe', price: 5000 },
+            { id: 'minuman-4', name: 'Teh Daun Mint', price: 6000 }
         ];
 
-        const bumbuVariants = [
-            {name: "Sambal Pecel", price: "Rp 5.000/bungkus"},
-            {name: "Bumbu Gudeg", price: "Rp 8.000/bungkus"},
-            {name: "Lombok Ijo Giling", price: "Rp 3.000/100gr"},
-            {name: "Garam Laut Lokal", price: "Rp 2.500/250gr"}
-        ];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        const cartCountDesktop = document.getElementById('cartCountDesktop');
+        const cartCountMobile = document.getElementById('cartCountMobile');
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+        const cartTotalAmount = document.getElementById('cartTotalAmount');
+        const emptyCartMessage = document.getElementById('emptyCartMessage');
+        const orderModal = document.getElementById('orderModal');
+        const cartModal = document.getElementById('cartModal');
 
-        let currentProduct = {};
-        let selectedVariant = {};
+        let currentProduct = null;
+        let selectedVariant = null;
 
-        // Filter products by category
-        function filterProducts(category) {
-            const products = document.querySelectorAll('.product-card');
-            const buttons = document.querySelectorAll('.category-btn');
-            
-            // Update active button
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Show/hide products
-            products.forEach(product => {
-                if (category === 'all' || product.dataset.category === category) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountDesktop.innerText = totalItems;
+            cartCountMobile.innerText = totalItems;
         }
 
-        // Open order modal
-        function openOrderModal(productName, sku, variants) {
-            currentProduct = {name: productName, sku: sku, variants: variants};
-            
-            document.getElementById('modalTitle').textContent = productName;
-            document.getElementById('modalSKU').textContent = sku;
-            
-            const variantsContainer = document.getElementById('modalVariants');
-            variantsContainer.innerHTML = '<h4>Pilih Varian:</h4>';
-            
-            variants.forEach((variant, index) => {
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
+        }
+
+        function openOrderModal(productName, productSKU, variants) {
+            document.getElementById('modalProductName').innerText = productName;
+            document.getElementById('modalProductSKU').innerText = productSKU;
+            const variantsContainer = document.getElementById('modalProductVariants');
+            variantsContainer.innerHTML = '';
+            variants.forEach(variant => {
                 const variantDiv = document.createElement('div');
-                variantDiv.className = 'variant-item';
-                variantDiv.style.cursor = 'pointer';
-                variantDiv.style.padding = '10px';
-                variantDiv.style.margin = '5px 0';
-                variantDiv.style.border = '2px solid #eee';
-                variantDiv.style.borderRadius = '10px';
-                variantDiv.style.transition = 'all 0.3s ease';
-                
+                variantDiv.classList.add('variant-item', 'modal-variant');
                 variantDiv.innerHTML = `
-                    <input type="radio" name="variant" value="${index}" id="variant${index}" style="margin-right: 10px;">
-                    <label for="variant${index}" style="cursor: pointer; display: flex; justify-content: space-between; width: 100%;">
-                        <span>${variant.name}</span>
-                        <strong style="color: #ff6b6b;">${variant.price}</strong>
+                    <label>
+                        <input type="radio" name="variant" value="${variant.id}" data-price="${variant.price}" data-name="${variant.name}" required>
+                        <span class="variant-name">${variant.name}</span>
                     </label>
+                    <span class="variant-price">${formatRupiah(variant.price)}</span>
                 `;
-                
-                variantDiv.addEventListener('click', function() {
-                    document.getElementById(`variant${index}`).checked = true;
-                    selectVariant(index);
-                });
-                
                 variantsContainer.appendChild(variantDiv);
             });
-            
-            // Select first variant by default
-            if (variants.length > 0) {
-                document.getElementById('variant0').checked = true;
-                selectVariant(0);
-            }
-            
-            document.getElementById('quantity').value = 1;
-            document.getElementById('orderModal').style.display = 'block';
-        }
 
-        // Select variant
-        function selectVariant(index) {
-            selectedVariant = currentProduct.variants[index];
-            
-            // Update visual selection
-            document.querySelectorAll('.variant-item').forEach(item => {
-                item.style.borderColor = '#eee';
-                item.style.backgroundColor = 'transparent';
+            document.getElementById('quantityInput').value = 1;
+            orderModal.style.display = 'block';
+
+            document.querySelectorAll('input[name="variant"]').forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    selectedVariant = {
+                        id: e.target.value,
+                        name: e.target.dataset.name,
+                        price: parseInt(e.target.dataset.price)
+                    };
+                });
             });
-            
-            document.querySelectorAll('.variant-item')[index].style.borderColor = '#ff6b6b';
-            document.querySelectorAll('.variant-item')[index].style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
+
+            const addToCartBtn = document.getElementById('addToCartBtn');
+            addToCartBtn.onclick = () => {
+                if (selectedVariant) {
+                    const quantity = parseInt(document.getElementById('quantityInput').value);
+                    addToCart(productName, productSKU, selectedVariant, quantity);
+                    closeOrderModal();
+                } else {
+                    alert('Mohon pilih varian produk terlebih dahulu.');
+                }
+            };
         }
 
-        // Close order modal
         function closeOrderModal() {
-            document.getElementById('orderModal').style.display = 'none';
+            orderModal.style.display = 'none';
+            selectedVariant = null;
         }
 
-        // Change quantity
+        function addToCart(productName, productSKU, variant, quantity) {
+            const existingItem = cart.find(item => item.variantId === variant.id);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    productId: productSKU,
+                    productName: productName,
+                    variantId: variant.id,
+                    variantName: variant.name,
+                    price: variant.price,
+                    quantity: quantity
+                });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(`${quantity} ${variant.name} ditambahkan ke keranjang!`);
+        }
+        
         function changeQuantity(change) {
-            const quantityInput = document.getElementById('quantity');
-            let quantity = parseInt(quantityInput.value) + change;
-            if (quantity < 1) quantity = 1;
-            quantityInput.value = quantity;
+            const quantityInput = document.getElementById('quantityInput');
+            let currentQuantity = parseInt(quantityInput.value);
+            currentQuantity += change;
+            if (currentQuantity < 1) {
+                currentQuantity = 1;
+            }
+            quantityInput.value = currentQuantity;
         }
 
-        // Confirm order - redirect to WhatsApp
-        document.getElementById('confirmOrder').addEventListener('click', function() {
-            const quantity = document.getElementById('quantity').value;
-            
-            if (!selectedVariant.name) {
-                alert('Silakan pilih varian produk terlebih dahulu!');
+        function renderCartItems() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            if (cart.length === 0) {
+                emptyCartMessage.classList.remove('hidden');
+                document.querySelector('.cart-total').classList.add('hidden');
+            } else {
+                emptyCartMessage.classList.add('hidden');
+                document.querySelector('.cart-total').classList.remove('hidden');
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('cart-item');
+                    itemDiv.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.productName}</div>
+                            <div class="cart-item-details">${item.variantName}</div>
+                            <div class="cart-item-quantity">
+                                <button class="cart-quantity-btn" onclick="updateCartItemQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="cart-quantity-btn" onclick="updateCartItemQuantity(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                        <span class="cart-item-price">${formatRupiah(itemTotal)}</span>
+                        <button class="cart-item-remove" onclick="removeCartItem(${index})">Hapus</button>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                });
+            }
+            cartTotalAmount.innerText = formatRupiah(total);
+        }
+
+        function updateCartItemQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                removeCartItem(index);
+            } else {
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCartItems();
+                updateCartCount();
+            }
+        }
+
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCartItems();
+            updateCartCount();
+        }
+
+        function openCart() {
+            renderCartItems();
+            cartModal.style.display = 'block';
+        }
+
+        function closeCart() {
+            cartModal.style.display = 'none';
+        }
+        
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem('cart');
+            renderCartItems();
+            updateCartCount();
+            alert('Keranjang belanja berhasil dikosongkan.');
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Keranjang Anda kosong. Tambahkan produk untuk checkout.');
                 return;
             }
-            
-            const phoneNumber = "628129683690";
-            const message = `
-🛍️ *PESANAN BARU - KOPERASI DESA MERAH PUTIH*
 
-📦 *Produk:* ${currentProduct.name}
-🔖 *SKU:* ${currentProduct.sku}
-📝 *Varian:* ${selectedVariant.name}
-💰 *Harga:* ${selectedVariant.price}
-📊 *Jumlah:* ${quantity}
+            let message = 'Halo Koperasi Desa Merah Putih, saya ingin memesan produk berikut:\n\n';
+            let total = 0;
 
-📍 *Dari:* Kalurahan Kedungsari
-📞 *Customer Service:* +62 812-9683-690
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                message += `- ${item.quantity}x ${item.variantName} (${item.productName}) - ${formatRupiah(itemTotal)}\n`;
+            });
 
-Mohon konfirmasi ketersediaan dan total harga. Terima kasih! 🙏
-            `.trim();
-            
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
-            closeOrderModal();
-        });
+            message += `\nTotal Belanja: ${formatRupiah(total)}`;
+            message += `\n\nNama: [Isi nama Anda]\nAlamat: [Isi alamat Anda]\nCatatan: [Isi catatan tambahan, contoh: "Bayar di tempat"]`;
 
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            const modal = document.getElementById('orderModal');
-            if (event.target === modal) {
-                closeOrderModal();
-            }
-        });
+            const whatsappUrl = `https://wa.me/628129683690?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
 
-        // Smooth scrolling untuk navigasi
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
                 }
             });
-        });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.category-btn[onclick="filterProducts('${category}')"]`).classList.add('active');
+        }
 
-        // Add loading animation to product cards
-        window.addEventListener('load', function() {
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.animation = `fadeInUp 0.6s ease-out forwards`;
-                }, index * 100);
-            });
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
         });
     </script>
 </body>
