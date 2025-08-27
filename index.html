@@ -798,6 +798,7 @@
                 <button class="category-btn" onclick="filterProducts('olahan')">Produk Olahan</button>
                 <button class="category-btn" onclick="filterProducts('minuman')">Minuman</button>
                 <button class="category-btn" onclick="filterProducts('lainlain')">Produk Lain-Lain</button>
+				<button class="category-btn" onclick="filterProducts('pertanian')">Pertanian</button>
             </div>
 
             <div class="products-grid" id="productsGrid">
@@ -857,7 +858,7 @@
                     <h3>Ikan Segar Lokal</h3>
                     <div class="product-variants">
                         <div class="variant-item">
-                            <span class="variant-name">10101-Ikan Lele Segar</span>
+                            <span class="variant-name">Ikan Lele Segar</span>
                             <span class="variant-price">Rp 18.000/kg</span>
                         </div>
                         <div class="variant-item">
@@ -974,6 +975,56 @@
                         </div>
                     </div>
                     <button class="order-btn" onclick="openOrderModal('Minuman Tradisional', 'KMN-001', minumanVariants)">Tambah ke Keranjang</button>
+				</div>
+				
+				<div class="product-card" data-category="lainlain">
+                    <div class="product-image">📝</div>
+                    <div class="product-sku">PLL-001</div>
+                    <h3>Produk Lain-Lain</h3>
+                    <div class="product-variants">
+                        <div class="variant-item">
+                            <span class="variant-name">Gas Melon</span>
+                            <span class="variant-price">Rp 21.000/tabung</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Materai</span>
+                            <span class="variant-price">Rp 12.000/pcs</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Tepung Terigu</span>
+                            <span class="variant-price">Rp 5.000/kg</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Buku Tulis</span>
+                            <span class="variant-price">Rp 6.000/pcs</span>
+                        </div>
+                    </div>
+                    <button class="order-btn" onclick="openOrderModal('Produk Lain-Lain', 'PLL-001', lainlainVariants)">Tambah ke Keranjang</button>
+                </div>
+				
+				<div class="product-card" data-category="pertanian">
+                    <div class="product-image">🌍</div>
+                    <div class="product-sku">PER-001</div>
+                    <h3>Pertanian</h3>
+                    <div class="product-variants">
+                        <div class="variant-item">
+                            <span class="variant-name">Pupuk A</span>
+                            <span class="variant-price">Rp 21.000/tabung</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Pupuk B</span>
+                            <span class="variant-price">Rp 12.000/pcs</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Pestisida A</span>
+                            <span class="variant-price">Rp 5.000/kg</span>
+                        </div>
+                        <div class="variant-item">
+                            <span class="variant-name">Pestisida B</span>
+                            <span class="variant-price">Rp 6.000/pcs</span>
+                        </div>
+                    </div>
+                    <button class="order-btn" onclick="openOrderModal('Pertanian', 'PER-001', pertanianVariants)">Tambah ke Keranjang</button>
                 </div>
             </div>
         </div>
@@ -991,12 +1042,12 @@
                 <div class="contact-item">
                     <h3>Telepon</h3>
                     <p>+62 812-9683 690</p>
-                    <p>+62 856-7890-1234</p>
+                    <p>+62 888-0617-4649</p>
                 </div>
                 <div class="contact-item">
                     <h3>Email</h3>
-                    <p>info@koperasimerahputih.com</p>
-                    <p>cs@koperasimerahputih.com</p>
+                    <p>kedungsarikdmp@gmail.com</p>
+                    <p>ekokus.djogja@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -1058,7 +1109,7 @@
             { id: 'sayuran-4', name: 'Tomat Cherry', price: 8000 }
         ];
         const ikanVariants = [
-            { id: 'ikan-1', name: '10101-Ikan Lele Segar', price: 18000 },
+            { id: 'ikan-1', name: 'Ikan Lele Segar', price: 18000 },
             { id: 'ikan-2', name: 'Ikan Nila Segar', price: 25000 },
             { id: 'ikan-3', name: 'Ikan Gurame', price: 35000 },
             { id: 'ikan-4', name: 'Ikan Bandeng', price: 22000 }
@@ -1086,6 +1137,18 @@
             { id: 'minuman-2', name: 'Es Kelapa Muda', price: 12000 },
             { id: 'minuman-3', name: 'Wedang Jahe', price: 5000 },
             { id: 'minuman-4', name: 'Teh Daun Mint', price: 6000 }
+        ];
+		const lainlainVariants = [
+            { id: 'lainlain-1', name: 'Gas Melon', price: 21000 },
+            { id: 'lainlain-2', name: 'Materai', price: 12000 },
+            { id: 'lainlain-3', name: 'Tepung Terigu', price: 5000 },
+            { id: 'lainlain-4', name: 'Buku Tulis', price: 6000 }
+        ];
+		const pertanianVariants = [
+            { id: 'pertanian-1', name: 'Pupuk A', price: 21000 },
+            { id: 'pertanian-2', name: 'Pupuk B', price: 12000 },
+            { id: 'pertanian-3', name: 'Pestisida A', price: 5000 },
+            { id: 'pertanian-4', name: 'Pestisida B', price: 6000 }
         ];
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
